@@ -1,0 +1,28 @@
+@charset "utf-8";
+$family-primary: 'Poppins', sans-serif;
+$family-secondary: 'Noto Serif', serif;
+$family-brand: 'Comfortaa', cursive;
+$border-radius: 0px;
+$primary: #118688;
+$secondary: #203ec4;
+@import "bulma/sass/utilities/initial-variables.sass";
+@import "bulma/sass/utilities/functions.sass";
+@import "bulma/sass/utilities/derived-variables.sass";
+@import "bulma/sass/utilities/animations.sass";
+@import "bulma/sass/utilities/mixins.sass";
+@import "bulma/sass/utilities/controls.sass";
+@import "bulma/sass/base/minireset.sass";
+@import "bulma/sass/base/generic.sass";
+@import "bulma/sass/base/helpers.sass";
+@import "bulma/sass/layout/section.sass";
+@import "bulma/sass/elements/container.sass";
+@import "bulma/sass/elements/content.sass";
+$border-radius: 0;
+@import "bulma/sass/elements/button.sass";
+
+.font-brand{
+    font-family: $family-brand;
+}
+.button{
+    border-radius: 0;
+}

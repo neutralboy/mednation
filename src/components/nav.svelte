@@ -1,63 +1,53 @@
-<style>
-.navbar{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    background-color: var(--primary);
-    min-height: 3.4rem;
-    overflow: hidden;
-}
-.navbar-section{
-    opacity: 1;
-    margin-left: 0.8rem;
-    margin-right: 0.8rem;
-}
-.navbar-brand{
-    margin-top: 0.4rem;
-    text-decoration: none;
-    font-size: 2rem;
-    font-weight: bold;
-    font-family: var(--font-brand);
-}
-.navbar-section > a{
-    display: block;
-    font-size: 1rem;
-    text-decoration: none;
-    color: rgb(32, 32, 32);
-    padding-top: 1rem;
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
-    height: 100%;
-    text-align: center;
-}
-.navbar-section a:hover{
-    background-color: #028e96;
-}
-.align-menu{
-    display: block
-}
-.icon-holder{
-    position: relative;
-    float: right;
-    margin-top: 0.8rem;
-}
+<script>
+    let active = false;
+    function activate(){
+        active = !active;
+    }
+</script>
+
+<style type="text/scss" >
+    $navbar-background-color: rgb(250, 237, 237);
+    $navbar-item-color: black;
+    @import "../main.scss";
+    $navbar-height: 3.6rem;
+    @import "bulma/sass/components/navbar.sass";
+
+    .navbar-brand{
+        span{
+            font-family: $family-brand;
+        }
+    }
 </style>
 
-<nav class="navbar">
-  <section class="navbar-section align-menu">
-    <span href="/" class="navbar-brand mr-2 black"><span class="white">Med</span>nation</span>
-    <button class="icon-holder show-sm">
-        <i class="icon icon-2x icon-menu"></i>
-    </button>
-  </section>
-  <section class="navbar-section hide-sm">
-    <a href="/colleges">Colleges</a>
-    <a href="/blog">Medi Blog</a>
-    <a href="/usmle" class="btn btn-link">USMLE</a>
-    <div>
-        <a class="btn btn-success btn-lg" href="/contact-us">Contact Us</a>
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <div class="navbar-item " href="/">
+        <span class="is-size-3 has-text-black has-text-weight-bold"><span class="has-text-primary">Med</span>nation</span>
     </div>
-    
-  </section>
+
+    <a on:click={activate} role="button" class="navbar-burger" class:is-active="{active}" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class:is-active="{active}" class="navbar-menu">
+    <div class="navbar-end">
+        <a class="navbar-item">
+            College Reviews
+        </a>
+        <a class="navbar-item">
+            USMLE
+        </a>
+        <a class="navbar-item">
+            Blog
+        </a>
+        <a class="navbar-item">
+            Events
+        </a>
+        <div class="navbar-item">
+            <a class="button is-primary"><b>Get Involved</b></a>
+        </div>
+    </div>
+  </div>
 </nav>
