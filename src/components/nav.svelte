@@ -1,53 +1,75 @@
-<script>
-    let active = false;
-    function activate(){
-        active = !active;
+<style>
+    nav{
+        position: sticky;
+        top:0;
+        background-color: #cbe8e9;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+        width: 100%;
     }
-</script>
-
-<style type="text/scss" >
-    $navbar-background-color: rgb(250, 237, 237);
-    $navbar-item-color: black;
-    @import "../main.scss";
-    $navbar-height: 3.6rem;
-    @import "bulma/sass/components/navbar.sass";
-
-    .navbar-brand{
-        span{
-            font-family: $family-brand;
-        }
+    nav .right {
+        float: right;
+        font-family: var(--font-family-serif);
+    }
+    .brand{
+        text-decoration: none;
+        font-family: var(--font-family-brand);
+        color: black;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    li{
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        border: 0;
+    }
+    .right > a:hover{
+        background-color: var(--primary);
+        color: white;
+    }
+    nav ul li a {
+        text-decoration: none;
+        display: block;
+        text-align:center;
+        height: 100%;
+        padding: 1rem;
+    }
+    .menu-icon{
+        max-height: 1.4rem;
+    }
+    .right .button{
+        margin-top: 0.6rem
     }
 </style>
 
-<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <div class="navbar-item " href="/">
-        <span class="is-size-3 has-text-black has-text-weight-bold"><span class="has-text-primary">Med</span>nation</span>
-    </div>
+<nav class="nav-inline">
+    <ul>
+        <li>
+            <a href="/" class="brand">Mednation</a>
+        </li>
 
-    <a on:click={activate} role="button" class="navbar-burger" class:is-active="{active}" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class:is-active="{active}" class="navbar-menu">
-    <div class="navbar-end">
-        <a class="navbar-item">
-            College Reviews
-        </a>
-        <a class="navbar-item">
-            USMLE
-        </a>
-        <a class="navbar-item">
-            Blog
-        </a>
-        <a class="navbar-item">
-            Events
-        </a>
-        <div class="navbar-item">
-            <a class="button is-primary"><b>Get Involved</b></a>
-        </div>
-    </div>
-  </div>
+
+        <li class="right show-xs">
+            <button class="button button-square button-icon">
+                <img class="menu-icon" alt="menu" src="https://img.icons8.com/ios-filled/50/000000/menu.png"/>
+            </button>
+        </li>
+
+        <li class="right hide-xs">
+            <button class="button">Get Involved</button>
+        </li>
+        <li class="right hide-xs">
+            <a href="/usmle">USMLE</a>
+        </li>
+        <li class="right hide-xs">
+            <a href="/blog">Blog</a>
+        </li>
+        <li class="right hide-xs">
+            <a href="/events">Events</a>
+        </li>
+        <li class="right hide-xs">
+            <a href="/reviews">Reviews</a>
+        </li>
+    </ul>
 </nav>
