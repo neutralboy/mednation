@@ -24,7 +24,7 @@
 					<h3 class="is-size-4 is-family-secondary">A community of Med students.</h3>
 				</div>
 			</div>
-			<div class="col-xs-12 col-lg-6 has-text-centered">
+			<div class="col-xs-12 col-lg-6 has-text-centered padding-m">
 				<figure>
 					<img class="main-img" alt="medical students" src="https://res.cloudinary.com/poorna/image/upload/v1590305977/undraw_medical_research_qg4d.svg" />
 				</figure>
@@ -56,7 +56,7 @@
 		</div>
 
 		<div class="box-shadow-s padding-s has-text-centered background-white border-radius">
-			<h3 class="is-size-3 is-family-secondary">Is your college listed here?</h3>
+			<h2 class="is-size-3 is-family-secondary">Is your college listed here?</h2>
 			<br>
 			<a class="button is-medium background-black color-white button-block">Write a review</a>
 		</div>

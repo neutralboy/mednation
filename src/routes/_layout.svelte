@@ -3,6 +3,7 @@
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Noto+Serif&family=Open+Sans&display=swap');
     :global(:root){
         --font-size-xxl: 3rem;
         --font-size-xl: 2.5rem;
@@ -14,27 +15,21 @@
         --font-size: var(--font-size-m);
 
 
-        --font-family-system: 'Poppins', sans-serif;
-        --font-family-sans-serif: 'Poppins', sans-serif;
+        --font-family-system: 'Open Sans', sans-serif;
+        --font-family-sans-serif: 'Open Sans', sans-serif;
         --font-family-serif: 'Noto Serif', serif;
         --font-family: var(--font-family-system);
         --font-family-brand: 'Comfortaa', cursive;
-        --body-font-family: var(--font-family);
-
-        
+        --body-font-family: var(--font-family-sans-serif);
         --primary: #118688;
         --secondary: #203ec4;
-
-
-
-
     }
     
     :global(.font-brand){
         font-family: var(--font-family-brand);
     }
     :global(.is-family-secondary){
-        font-family: var(--font-family-serif)
+        font-family: var(--font-family-serif);
     }
     :global(.is-vcentered){
         display: flex;
@@ -47,6 +42,7 @@
     :global(.has-background-primary){ background-color: var(--primary); }
     :global(.container){ padding: 2rem; }
     :global(.no-max-width){ max-width: 100%; }
+    :global(body){ font-family: var(--font-family-sans-serif) }
     .margin-top{
         margin-top: 3.6rem;
     }
