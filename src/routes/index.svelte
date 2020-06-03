@@ -43,8 +43,8 @@
 	</div>
 </section>
 
-<section class="section">
-	<div class="container has-background-primary">
+<section class="section has-background-primary">
+	<div class="container">
 		<h2 class="is-size-2 is-family-secondary has-text-white">Latest Reviews</h2>
 		<div class="columns">
 
