@@ -43,22 +43,22 @@
 	</div>
 </section>
 
-<section class="section">
-	<div class="container has-background-primary">
+<section class="section has-background-primary">
+	<div class="container">
 		<h2 class="is-size-2 is-family-secondary has-text-white">Latest Reviews</h2>
-		<div class="columns">
+			<div class="columns">
 
-		{#each latest as { name, location }}
-			<div class="column is-one-quarter-desktop is-full-mobile" >
-				<div class="box content">
-					<h4 class="is-family-secondary">{name}</h4>
-					<p>Location: <b>{location}</b></p>
+			{#each latest as { name, location }}
+				<div class="column is-one-quarter-desktop is-full-mobile" >
+					<div class="box content">
+						<h4 class="is-family-secondary">{name}</h4>
+						<p>Location: <b>{location}</b></p>
+					</div>
 				</div>
+			{/each}
+
+
 			</div>
-		{/each}
-
-
-		</div>
 
 		<div class="box has-text-centered">
 			<h3 class="is-size-3 is-family-secondary">Is your college listed here?</h3>

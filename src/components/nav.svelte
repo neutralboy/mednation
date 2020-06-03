@@ -1,7 +1,12 @@
 <script>
+    import SignUp from './signup.svelte';
     let active = false;
     function activate(){
         active = !active;
+    }
+    let modal = false;
+    function toggleModal(){
+        modal = !modal;
     }
 </script>
 
@@ -21,7 +26,7 @@
 
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <div class="navbar-item " href="/">
+    <div class="navbar-item">
         <span class="is-size-3 has-text-black has-text-weight-bold"><span class="has-text-primary">Med</span>nation</span>
     </div>
 
@@ -36,8 +41,8 @@
         <a class="navbar-item">
             College Reviews
         </a>
-        <a class="navbar-item">
-            USMLE
+        <a href="/mentors" class="navbar-item">
+            Mentors
         </a>
         <a class="navbar-item">
             Blog
@@ -46,8 +51,12 @@
             Events
         </a>
         <div class="navbar-item">
-            <a class="button is-primary"><b>Get Involved</b></a>
+            <button on:click={toggleModal} class="button is-primary"><b>Get Involved</b></button>
         </div>
     </div>
   </div>
 </nav>
+
+<div>
+    <SignUp open={modal} close={toggleModal} />
+</div>
