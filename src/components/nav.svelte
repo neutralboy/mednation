@@ -22,6 +22,7 @@
             font-family: $family-brand;
         }
     }
+    .icon{ max-height: 2rem; }
 </style>
 
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
@@ -37,7 +38,11 @@
     </a>
   </div>
   <div class:is-active="{active}" class="navbar-menu">
-    <div class="navbar-end">
+    <div class="navbar-end"> 
+        <!-- NOT AN ESSENTIAL FEATURE UNTIL 10 COLLEGES -->
+        <!-- <a href="/search" class="navbar-item">
+            <img alt="search" class="icon" src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png"/>
+        </a> --> 
         <a href="/reviews" class="navbar-item">
             College Reviews
         </a>

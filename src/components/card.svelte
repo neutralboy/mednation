@@ -33,7 +33,7 @@
     .content{ font-size: 0.8rem; }
 </style>
 
-<a href={"/r/"+link}>
+<a href={"/review/"+link}>
     <div class="card">
         <div class="card-image">
             <figure class="image is-2by1">
