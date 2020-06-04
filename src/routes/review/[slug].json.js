@@ -2,7 +2,7 @@ import posts from './_posts';
 
 const lookup = new Map();
 posts.forEach(post => {
-    lookup.set(post.slug, JSON.stringify(post));
+    lookup.set(post._id, JSON.stringify(post));
 });
 
 export function get(req, res, next) {

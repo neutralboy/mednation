@@ -56,5 +56,5 @@
 <h1>{post.title}</h1>
 
 <div class='content'>
-	{@html post.html}
+	{@html post.college_specifics}
 </div>
