@@ -1,14 +1,8 @@
-import posts from './_posts';
+import getPosts from './_posts';
 
-const lookup = new Map();
-posts.forEach(post => {
-    lookup.set(post._id, JSON.stringify(post));
-});
-
-export function get(req, res, next) {
-    // the `slug` parameter is available because
-    // this file is called [slug].json.js
+export async function get(req, res, next) {
     const { slug } = req.params;
+    const lookup = await getPosts();
 
     if (lookup.has(slug)) {
         res.writeHead(200, {

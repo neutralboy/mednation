@@ -1,17 +1,7 @@
 const axios = require('axios');
+const fetch = require('node-fetch');
 
-// const key = "account-b822f49ae6fb5c314ad1d5d7cfdf38"
-// const domain = "https://backend.mednation.org";
-// const posts = axios.post(domain + "/api/collections/get/reviews?token=" + key, {
-// 	body: JSON.stringify({
-// 		limit: 10
-// 	})
-// }).then(r=>{
-// 	console.log(r.data);
-// 	return r.data.entries;
-// }).catch(e=>{ console.log(e); return []; })
-
-const posts = [
+const posts2 = [
 	{
 		"title": "Kempegowda Institute of Medical Sciences",
 		"rating": 3,
@@ -47,8 +37,24 @@ const posts = [
 	}
 ];
 
-posts.forEach(post => {
-    post.college_specifics = post.college_specifics.replace(/^\t{3}/gm, '');
-});
+const getPosts = async () =>{
+	const key = "account-b822f49ae6fb5c314ad1d5d7cfdf38"
+	const domain = "https://backend.mednation.org";
+	let res = await fetch(domain + "/api/collections/get/reviews?token=" + key, {
+		method: 'post',
+		body: JSON.stringify({
+			limit: 10
+		})
+	}).then(r=>r.json())
+	const posts = res.entries;
+	posts.forEach(post => {
+		post.college_specifics = post.college_specifics.replace(/^\t{3}/gm, '');
+	});
+	let lookup = new Map();
+	posts.forEach(post => {
+		lookup.set(post._id, JSON.stringify(post));
+	});
+	return lookup;
+}
 
-export default posts;
+export default getPosts;

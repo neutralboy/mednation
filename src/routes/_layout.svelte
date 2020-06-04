@@ -8,6 +8,9 @@
     .margin-top{
         margin-top: 3.6rem;
     }
+    body{
+        scroll-behavior: smooth;
+    }
 </style>
 
 
