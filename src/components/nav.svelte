@@ -18,7 +18,7 @@
     @import "bulma/sass/components/navbar.sass";
 
     .navbar-brand{
-        span{
+        a{
             font-family: $family-brand;
         }
     }
@@ -27,7 +27,7 @@
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <div class="navbar-item">
-        <span class="is-size-3 has-text-black has-text-weight-bold"><span class="has-text-primary">Med</span>nation</span>
+        <a href="/" class="is-size-3 has-text-black has-text-weight-bold"><span class="has-text-primary">Med</span>nation</a>
     </div>
 
     <a on:click={activate} role="button" class="navbar-burger" class:is-active="{active}" aria-label="menu" aria-expanded="false">
@@ -38,7 +38,7 @@
   </div>
   <div class:is-active="{active}" class="navbar-menu">
     <div class="navbar-end">
-        <a class="navbar-item">
+        <a href="/reviews" class="navbar-item">
             College Reviews
         </a>
         <a href="/mentors" class="navbar-item">

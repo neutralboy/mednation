@@ -15,10 +15,7 @@
     "bulma": "^0.8.2",
     "compression": "^1.7.1",
     "polka": "next",
-    "purecss": "^2.0.3",
-    "sirv": "^0.4.0",
-    "spectre.css": "^0.5.8",
-    "tent-css": "^1.4.3"
+    "sirv": "^0.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -30,7 +27,6 @@
     "@rollup/plugin-node-resolve": "^7.0.0",
     "@rollup/plugin-replace": "^2.2.0",
     "autoprefixer": "^9.8.0",
-    "mini.css": "^3.0.1",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
     "rollup": "^2.0.0",

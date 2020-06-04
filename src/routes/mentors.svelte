@@ -1,26 +1,32 @@
 <script context="module" >
     const key = "account-b822f49ae6fb5c314ad1d5d7cfdf38"
     const domain = "https://backend.mednation.org";
-	export async function preload(page, session) {
+	export async function preload() {
 		const res = await this.fetch(domain+"/api/collections/get/usmle?token="+key);
         const r = await res.json();
 		return { users: r.entries };
 	}
 </script>
 <script>
+    import MentorSignUp from '../components/mentor-signup.svelte';
     import Og from '../components/og.svelte';
     export let users;
+    let open = false;
     function processImage(img){
         if(img[0] != "/"){
             return "/"+img;
         }
         return img;
     }
+    function toggle(){
+        open = !open;
+    }
 </script>
 <style lang="scss">
 	@import "../main.scss";
 	@import "bulma/sass/grid/columns.sass";
 	@import "bulma/sass/components/card.sass";
+    @import "bulma/sass/elements/image.sass";
     .margin-bottom{ margin-bottom: 2rem; }
     .title{
         display: inline;
@@ -55,7 +61,7 @@
                         <div class="content">
                             {description}
                         </div>
-                        <button class:is-primary="{type=='USMLE'}" class:is-success="{type=='PLAB'}" class:is-danger="{type=='NEET'}" class="button is-rounded">{type}</button>
+                        <button class:is-primary="{type=='USMLE'}" class:is-success="{type=='PLAB'}" class:is-info="{type=='NEET'}" class="button is-rounded">{type}</button>
                     </div>
                 </div>
             </div>
@@ -64,5 +70,7 @@
 
         </div>
 
+    <button on:click={toggle} class="button is-fullwidth is-warning is-medium is-family-secondary">Sign Up</button>
+    <MentorSignUp open={open} close={toggle} />
     </div>
 </section>
