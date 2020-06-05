@@ -13,13 +13,7 @@ const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
-const onwarn = (warning, handler) => {
-	const { code, frame } = warning;
-	if (code === "css-unused-selector")
-		return;
-
-	handler(warning);
-}
+const onwarn = (warning, handler) => {}
 
 const preprocess = sveltePreprocess({
 	scss: {
