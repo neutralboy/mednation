@@ -1,22 +1,13 @@
 <script context="module">
-    const key = "account-b822f49ae6fb5c314ad1d5d7cfdf38"
-    const domain = "https://backend.mednation.org";
-	export async function preload() {
-		const res = await this.fetch(domain+"/api/collections/get/reviews?token="+key, {
-            method: 'post',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                limit: 10,
-                fields: {title: 1, rating: 1, state: 1, main_image: 1, main_body: 1, _id: 1}
-            })
-        });
-        const r = await res.json();
-		return { cards: r.entries };
-	}
+  export function preload({ params, query }) {
+    return this.fetch(`review.json`).then(r => r.json()).then(cards => {
+      return { cards: cards };
+    });
+  }
 </script>
 <script>
-    import Og from "../components/og.svelte";
-    import Card from "../components/card.svelte";
+    import Og from "../../components/og.svelte";
+    import Card from "../../components/card.svelte";
     export let cards;
 </script>
 <style lang="scss">

@@ -43,7 +43,7 @@
         <!-- <a href="/search" class="navbar-item">
             <img alt="search" class="icon" src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png"/>
         </a> --> 
-        <a href="/reviews" class="navbar-item">
+        <a href="/review" class="navbar-item">
             College Reviews
         </a>
         <a href="/mentors" class="navbar-item">
