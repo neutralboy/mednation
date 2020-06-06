@@ -14,7 +14,7 @@
 <footer class=" footer has-text-centered  ">
         <div class="columns ">
             <div class=" column is-one-third-desktop is-full-mobile ">
-                <h3 class=" is-size-3 font-brand has-text-black">Mednation</h3> 
+                <h3 class="is-size-3 has-text-black has-text-weight-bold font-brand"><span class="has-text-primary">Med</span>nation</h3>
                 <div>
                     <p class="is-family-secondary">A community of Med students.</p>
                 </div>

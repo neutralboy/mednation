@@ -37,7 +37,7 @@
     <div class="card">
         <div class="card-image">
             <figure class="image is-2by1">
-            <img src={"https://backend.mednation.org"+processImage(image.path)} alt="Placeholder image">
+            <img src={"https://backend.mednation.org"+processImage(image.path)} alt={title}>
             </figure>
         </div>
         <div class="card-content">

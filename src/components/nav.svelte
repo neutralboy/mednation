@@ -37,7 +37,7 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
-  <div class:is-active="{active}" class="navbar-menu">
+  <div on:click={activate} class:is-active="{active}" class="navbar-menu">
     <div class="navbar-end"> 
         <!-- NOT AN ESSENTIAL FEATURE UNTIL 10 COLLEGES -->
         <!-- <a href="/search" class="navbar-item">
@@ -49,7 +49,7 @@
         <a href="/mentors" class="navbar-item">
             Mentors
         </a>
-        <a class="navbar-item">
+        <a href="/blog" class="navbar-item">
             Blog
         </a>
         <a class="navbar-item">

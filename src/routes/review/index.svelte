@@ -18,25 +18,26 @@
     }
 </style>
 
-<Og title="College Reviews" />
+<Og title="College Reviews" url="review" />
 <section class="section">
     <div class="container">
         <div class="header has-text-centered margin-bottom">
             <h1 class="is-size-2 font-brand">College Reviews</h1>
         </div>
         <div class="columns is-multiline">
-            <div class="column is-one-third-desktop is-full-mobile">
+            
                 {#each cards as { title, rating, state, main_image, main_body, _id }}
-                    <Card
-                        title={title}
-                        rating={rating}
-                        state={state}
-                        image={main_image}
-                        main_body={main_body}
-                        link={_id}
-                    />
+                    <div class="column is-one-third-desktop is-full-mobile">
+                        <Card
+                            title={title}
+                            rating={rating}
+                            state={state}
+                            image={main_image}
+                            main_body={main_body}
+                            link={_id}
+                        />
+                    </div>
                 {/each}
-            </div>
         </div>
 
     </div>

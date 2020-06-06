@@ -22,7 +22,7 @@
 	}
 </style>
 
-<Og title="Homepage" />
+<Og title="Home" />
 
 <section class="section">
 	<div class="container">

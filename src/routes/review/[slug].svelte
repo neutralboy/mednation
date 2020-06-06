@@ -11,6 +11,7 @@
 </script>
 
 <script>
+	import Og from "../../components/og.svelte";
 	import Accordion from '../../components/accordion.svelte';
 	import IconMenu from '../../components/icon-menu.svelte';
 	export let post;
@@ -62,6 +63,7 @@
 	}
 }
 </style>
+<Og url={"review/"+slug} title={post.title} description={post.main_body.substring(0, 80) + "..."} />
 <section class="section">
 	<div class="container">
 		<div class="header has-text-centered">
