@@ -13,7 +13,6 @@
 <script>
 	import Og from "../../components/og.svelte";
 	import Accordion from '../../components/accordion.svelte';
-	import IconMenu from '../../components/icon-menu.svelte';
 	export let post;
 	export let slug;
 	function processImage(img){

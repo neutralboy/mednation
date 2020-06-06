@@ -29,7 +29,9 @@
 		<div class="columns is-vcentered">
 			<div class="column is-half-descktop is-full-mobile">
 				<div class="has-text-centered">
-					<h1 class="is-size-1 has-text-black font-brand">Mednation</h1>
+					<h1 class="is-size-1 has-text-black font-brand has-text-weight-bold">
+						<span class="has-text-primary">Med</span>nation
+					</h1>
 					<h3 class="is-size-4 is-family-secondary">A community of Medical students.</h3>
 				</div>
 			</div>

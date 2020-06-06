@@ -21,17 +21,16 @@
             </div>
             <div class="column is-one-third-desktop is-full-mobile ">
                 <ul>
-                    <li>College Reviews</li>
-                    <li>USMLE Tutoring</li>
-                    <li>Blog</li>
-                    <li>Events</li>
+                    <li><a href="/review">College Reviews</a></li>
+                    <li><a href="/mentors">Mentoring</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/events">Events</a></li>
                 </ul>
             </div>
             <div class="column is-one-third-desktop is-full-mobile ">
                 <ul>
-                    <li>About Us</li>
-                    <li>Get Involved</li>
-                    <li>Meet the team</li>
+                    <li><a href="/about-us">About Us</a></li>
+                    <li><a href="/meet-the-team">Meet the team</a></li>
                 </ul>
             </div>
         </div>
