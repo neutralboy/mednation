@@ -7,7 +7,7 @@ async function getAllPosts() {
         method: 'post',
         body: JSON.stringify({
             limit: 10,
-            fields: { title: 1, _id: 1, rating: 1, main_body: 1, state: 1, main_image: 1 }
+            fields: { title: 1, _id: 1, rating: 1, main_body: 1, state: 1, main_image: 1, location: 1 }
         })
     }).then(r => r.json()).catch(e=>{ console.log(e) })
     const posts = res.entries;

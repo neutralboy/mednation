@@ -14,6 +14,7 @@
 	import Accordion from '../../components/accordion.svelte';
 	import IconMenu from '../../components/icon-menu.svelte';
 	export let post;
+	export let slug;
 	function processImage(img){
         if(img[0] != "/"){
             return "/"+img;
@@ -25,6 +26,7 @@
 <style lang="scss" >
 	@import "../main.scss";
 	@import "bulma/sass/grid/columns.sass";
+	@import "bulma/sass/elements/icon.sass";
 	.level-header{ margin-top: 1.4rem; }
 	.image{
 		padding: 0;
@@ -93,12 +95,13 @@
 			<p>{post.main_body}</p>
 		</div>
 
-			<div class="has-text-centered">
-				<IconMenu />
-			</div>
-
 		<div id="campus" class="heading">
-			<h3 class="is-size-3 has-text-black is-family-secondary">Campus</h3>
+			<h3 class="is-size-3 has-text-black is-family-secondary">
+				<span class="icon is-large">
+					<img alt="student" src="https://img.icons8.com/dusk/64/000000/student-center.png"/>
+				</span>
+				Campus
+			</h3>
 			<div class="content">
 				<p>{post.campus_summary}</p>
 			</div>
@@ -113,7 +116,12 @@
 		</div>
 
 		<div id="hostel" class="heading">
-			<h3 class="is-size-3 has-text-black is-family-secondary">Hostel</h3>
+			<h3 class="is-size-3 has-text-black is-family-secondary">
+				<span class="icon is-large">
+					<img alt="hostel" src="https://img.icons8.com/dusk/64/000000/3-star-hotel.png"/>
+				</span>
+				Hostel
+			</h3>
 			<div class="content">
 				<p>{post.hostel_summary}</p>
 			</div>
@@ -128,19 +136,34 @@
 		</div>
 
 		<div id="safety" class="heading">
-			<h3 class="is-size-3 has-text-black is-family-secondary">Safety</h3>
+			<h3 class="is-size-3 has-text-black is-family-secondary">
+				<span class="icon is-large">
+					<img alt="safety" src="https://img.icons8.com/cotton/64/000000/safety-vest-1.png"/>
+				</span>
+				Safety
+			</h3>
 			<div class="content"><p> {post.safety_summary} </p></div>
 			<Accordion title="Read More" content={post.safety_specifics} />
 		</div>
 
 		<div id="transport" class="heading">
-			<h3 class="is-size-3 has-text-black is-family-secondary">Transport</h3>
+			<h3 class="is-size-3 has-text-black is-family-secondary">
+				<span class="icon is-large">
+					<img alt="transport" src="https://img.icons8.com/dusk/50/000000/bus.png"/>
+				</span>
+				Transport
+			</h3>
 			<div class="content"><p> {post.transport_summary} </p></div>
 			<Accordion title="Read More" content={post.transport_specifics} />
 		</div>
 
 		<div id="comp" class="heading">
-			<h3 class="is-size-3 has-text-black is-family-secondary">Competitions</h3>
+			<h3 class="is-size-3 has-text-black is-family-secondary">
+				<span class="icon is-large">
+					<img alt="trophy" src="https://img.icons8.com/dusk/50/000000/trophy.png"/>
+				</span>
+				Competitions
+			</h3>
 			<div class="content"><p> {post.competitions_summary} </p></div>
 			<div class="columns">
 				<div class="column is-one-third-desktop is-full-mobile">
@@ -156,7 +179,12 @@
 		</div>
 
 		<div id="lifestyle" class="heading">
-			<h3 class="is-size-3 has-text-black is-family-secondary">Lifestyle</h3>
+			<h3 class="is-size-3 has-text-black is-family-secondary">
+				<span class="icon is-large">
+					<img alt="party" src="https://img.icons8.com/dusk/50/000000/dancing-party.png"/>
+				</span>
+				Lifestyle
+			</h3>
 			<div class="content"><p> {post.lifestyle_summary} </p></div>
 			<Accordion title="Read More" content={post.lifestyle_specifics} />
 		</div>

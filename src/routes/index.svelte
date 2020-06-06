@@ -1,11 +1,14 @@
+<script context="module">
+  export function preload({ params, query }) {
+    return this.fetch(`review.json`).then(r => r.json()).then(cards => {
+		let latest = cards.slice(0, 4);
+		return { latest: latest };
+    });
+  }
+</script>
 <script>
 	import Og from '../components/og.svelte';
-	let latest = [
-		{ name: "ABC institute of medical sciences", location: "XYZ" },
-		{ name: "ABC institute of medical sciences", location: "XYZ" },
-		{ name: "ABC institute of medical sciences", location: "XYZ" },
-		{ name: "ABC institute of medical sciences", location: "XYZ" }
-	]
+	export let latest;
 </script>
 <style lang="scss" >
 	@import "../main.scss";
@@ -14,8 +17,8 @@
 	.main-img{
 		max-height: 20rem;
 	}
-	.container{
-		padding: 2rem;
+	.is-size-2{
+		margin-bottom: 2rem;
 	}
 </style>
 
@@ -27,7 +30,7 @@
 			<div class="column is-half-descktop is-full-mobile">
 				<div class="has-text-centered">
 					<h1 class="is-size-1 has-text-black font-brand">Mednation</h1>
-					<h3 class="is-size-4 is-family-secondary">A community of Med students.</h3>
+					<h3 class="is-size-4 is-family-secondary">A community of Medical students.</h3>
 				</div>
 			</div>
 			<div class="column is-half-descktop is-full-mobile has-text-centered">
@@ -46,14 +49,17 @@
 <section class="section has-background-primary">
 	<div class="container">
 		<h2 class="is-size-2 is-family-secondary has-text-white">Latest Reviews</h2>
+
 			<div class="columns">
 
-			{#each latest as { name, location }}
+			{#each latest as { _id, title, state }}
 				<div class="column is-one-quarter-desktop is-full-mobile" >
-					<div class="box content">
-						<h4 class="is-family-secondary">{name}</h4>
-						<p>Location: <b>{location}</b></p>
-					</div>
+					<a href={"/review/"+_id}>
+						<div class="box content">
+							<h4 class="is-family-secondary">{title}</h4>
+							<button class="button is-info is-light is-medium" >{state}</button>
+						</div>
+					</a>
 				</div>
 			{/each}
 

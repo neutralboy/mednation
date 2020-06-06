@@ -1,9 +1,3 @@
-<script>
-    import Notification from './notification.svelte';
-    export let open = false;
-    export let close;
-    let success = false;
-</script>
 <style lang="scss">
     @import "../main.scss";
     @import "bulma/sass/components/modal.sass";
@@ -14,17 +8,49 @@
     @import "bulma/sass/form/tools.sass";
     @import "bulma/sass/form/select.sass";
 </style>
+<script>
+    import Notification from './notification.svelte';
+    export let open = false;
+    export let close;
+    let success = false;
+
+    let name = "";
+    let phone = "";
+    let skill = "";
+
+    const formSubmit = e =>{
+        e.preventDefault();
+        console.log(` ${name} `);
+        fetch("https://backend.mednation.org/api/forms/submit/ContactUs?token=account-b822f49ae6fb5c314ad1d5d7cfdf38",
+        {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                form: {
+                    name: name,
+                    phone: phone,
+                    skill: skill
+                }
+            })
+        }).then(r=>r.json()).then(r=>{
+            console.log(r);
+            success = true;
+        })
+    }
+
+</script>
 <div class:is-active="{open}" class="modal">
     <div class="modal-background"></div>
     <div class="modal-content">
         <div class="box">
             <h2 class="is-size-4 is-family-secondary has-text-black">Tell us what you can do and we'll reach out.</h2>
             <br>
-            <form>
+            
+            <form class:is-hidden={success} on:submit={formSubmit} >
                 <div class="field">
                     <label class="label">Name</label>
                     <div class="control">
-                        <input required class="input" type="text">
+                        <input bind:value={name} required class="input" type="text">
                     </div>
                 </div>
                 <div class="field has-addons">
@@ -34,19 +60,18 @@
                         </button>
                     </p>
                     <p class="control is-expanded">
-                        <input required class="input" type="text" minlength="10">
+                        <input bind:value={phone} required class="input" type="text" minlength="10">
                     </p>
                 </div>
                 <div class="field">
                     <label class="label">Tell us what you can do</label>
                     <div class="control">
-                        <input class="input" required type="text">
+                        <input bind:value={skill} class="input" required type="text">
                     </div>
                 </div>
                 <input class="button is-primary is-fullwidth" value="Submit" type="submit" >
             </form>
             <Notification open={success} />
-
         </div>
     </div>
     <button on:click={close} class="modal-close is-large" aria-label="close"></button>

@@ -45,7 +45,7 @@
         <div class="columns is-multiline">
 
 {#each users as { name, image, description, type }}
-            <div class="column is-one-quarter-desktop is-full-mobile">
+            <div class="column is-one-third-desktop is-full-mobile">
                 <div class="card">
                     <div class="card-image">
                         <figure class="image is-4by3">
@@ -61,7 +61,7 @@
                         <div class="content">
                             {description}
                         </div>
-                        <button class:is-primary="{type=='USMLE'}" class:is-success="{type=='PLAB'}" class:is-info="{type=='NEET'}" class="button is-rounded">{type}</button>
+                        <button class:is-primary="{type=='USMLE'}" class:is-success="{type=='PLAB'}" class:is-info="{type=='NEET'}" class="button is-rounded is-medium">{type}</button>
                     </div>
                 </div>
             </div>
