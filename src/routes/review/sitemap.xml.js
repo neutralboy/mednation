@@ -1,4 +1,3 @@
-import Sitemap from '../../Sitemap.html';
 const fetch = require("node-fetch")
 
 async function getAllPosts() {

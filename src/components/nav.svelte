@@ -11,7 +11,7 @@
 </script>
 
 <style type="text/scss" >
-    $navbar-background-color: rgb(250, 237, 237);
+    $navbar-background-color: #faeded;
     $navbar-item-color: black;
     @import "../main.scss";
     $navbar-height: 3.6rem;
@@ -43,6 +43,9 @@
         <!-- <a href="/search" class="navbar-item">
             <img alt="search" class="icon" src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png"/>
         </a> --> 
+        <a href="/" class="navbar-item">
+            Home
+        </a>
         <a href="/review" class="navbar-item">
             College Reviews
         </a>
@@ -52,9 +55,9 @@
         <a href="/blog" class="navbar-item">
             Blog
         </a>
-        <a class="navbar-item">
+        <!-- <a class="navbar-item">
             Events
-        </a>
+        </a> -->
         <div class="navbar-item">
             <button on:click={toggleModal} class="button is-primary"><b>Get Involved</b></button>
         </div>

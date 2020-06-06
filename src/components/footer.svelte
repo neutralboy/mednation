@@ -24,7 +24,7 @@
                     <li><a href="/review">College Reviews</a></li>
                     <li><a href="/mentors">Mentoring</a></li>
                     <li><a href="/blog">Blog</a></li>
-                    <li><a href="/events">Events</a></li>
+                    <!-- <li><a href="/events">Events</a></li> -->
                 </ul>
             </div>
             <div class="column is-one-third-desktop is-full-mobile ">

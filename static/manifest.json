@@ -1,19 +1,14 @@
 {
-	"background_color": "#ffffff",
-	"theme_color": "#333333",
+	"background_color": "#faeded",
+	"theme_color": "#118688",
 	"name": "Mednation",
 	"short_name": "MN",
 	"display": "minimal-ui",
 	"start_url": "/",
 	"icons": [
 		{
-			"src": "logo-192.png",
+			"src": "https://res.cloudinary.com/poorna/image/upload/c_scale,h_192,q_auto:eco,w_192/v1591465644/mednation-favicon-192.png",
 			"sizes": "192x192",
-			"type": "image/png"
-		},
-		{
-			"src": "logo-512.png",
-			"sizes": "512x512",
 			"type": "image/png"
 		}
 	]
