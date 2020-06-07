@@ -71,7 +71,7 @@
 		<div class="box has-text-centered">
 			<h3 class="is-size-3 is-family-secondary">Is your college listed here?</h3>
 			<br>
-			<a class="button is-medium has-background-black has-text-white is-fullwidth">Write a review</a>
+			<a href="/get-involved" class="button is-medium has-background-black has-text-white is-fullwidth">Write a review</a>
 		</div>
 	</div>
 </section>

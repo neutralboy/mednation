@@ -1,12 +1,7 @@
 <script>
-    import SignUp from './signup.svelte';
     let active = false;
     function activate(){
         active = !active;
-    }
-    let modal = false;
-    function toggleModal(){
-        modal = !modal;
     }
 </script>
 
@@ -59,12 +54,8 @@
             Events
         </a> -->
         <div class="navbar-item">
-            <button on:click={toggleModal} class="button is-primary"><b>Get Involved</b></button>
+            <a href="/get-involved" class="button is-primary">Get Involved</a>
         </div>
     </div>
   </div>
 </nav>
-
-<div>
-    <SignUp open={modal} close={toggleModal} />
-</div>

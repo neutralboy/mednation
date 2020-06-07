@@ -31,6 +31,7 @@
                 <ul>
                     <li><a href="/about-us">About Us</a></li>
                     <li><a href="/meet-the-team">Meet the team</a></li>
+                    <li><a rel="nofollow noreferrer" target="_blank" href="https://github.com/neutralboy/mednation">Github</a></li>
                 </ul>
             </div>
         </div>

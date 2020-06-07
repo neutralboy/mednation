@@ -6,9 +6,9 @@ A med student community for reviews written by students.
 * Cockpit CMS
 
 ## Features to Add
-* Page interlinking
 * Generate sitemap
 
 ## Level 2 
-* Search function
+* Page interlinking
+* Search
 * Filter by state
