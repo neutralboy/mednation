@@ -19,6 +19,8 @@
     let name = "";
     let phone = "";
     let email = "";
+    let city = "";
+    let college = "";
 
     const formSubmit = e =>{
         e.preventDefault();
@@ -31,7 +33,9 @@
                 form: {
                     name: name,
                     phone: phone,
-                    email: email
+                    email: email,
+                    college: college,
+                    city: city
                 }
             })
         }).then(r=>r.json()).then(r=>{
@@ -79,7 +83,21 @@
                                 <input bind:value={email} class="input" required type="email">
                             </div>
                         </div>
+                        <div class="field">
+                            <label class="label">City</label>
+                            <div class="control">
+                                <input bind:value={city} class="input" required type="text">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">College</label>
+                            <div class="control">
+                                <input bind:value={college} class="input" required type="text">
+                            </div>
+                        </div>
                         <input class="button is-primary is-fullwidth" value="Submit" type="submit" >
+                        <br>
+                        <Notification open={true} type={"is-warning"} text="Please note we will contact you through Whatsapp." />
                     </form>
                     <Notification open={success} />
             </div>
