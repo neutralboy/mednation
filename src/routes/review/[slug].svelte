@@ -62,7 +62,7 @@
 	}
 }
 </style>
-<Og url={"review/"+slug} title={post.title} description={post.main_body.substring(0, 80) + "..."} />
+<Og url={"review/"+slug} title={post.title} image={post.main_image.path} description={post.main_body.substring(0, 80) + "..."} />
 <section class="section">
 	<div class="container">
 		<div class="header has-text-centered">
