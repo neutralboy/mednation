@@ -6,8 +6,9 @@ async function getAllBlogs() {
     let res = await fetch(domain + "/api/collections/get/article?token=" + key, {
         method: 'post',
         body: JSON.stringify({
+            filter: {published:true},
             limit: 10,
-            fields: { title: 1, _id: 1, summary: 1, type: 1, author: 1, _created: 1, image: 1 }
+            fields: { title: 1, _id: 1, summary: 1, type: 1, author: 1, _created: 1, image: 1, published: 1}
         })
     }).then(r => r.json()).catch(e => { console.log(e) })
     const posts = res.entries;

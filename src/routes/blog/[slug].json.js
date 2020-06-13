@@ -6,6 +6,7 @@ const getPosts = async () => {
     let res = await fetch(domain + "/api/collections/get/article?token=" + key, {
         method: 'post',
         body: JSON.stringify({
+            filter: {published:true},
             limit: 10
         })
     }).then(r => r.json())

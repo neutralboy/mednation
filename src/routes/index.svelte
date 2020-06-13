@@ -44,7 +44,7 @@
 
 <section class="section">
 	<div class="container content">
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque pulvinar pellentesque habitant morbi. In metus vulputate eu scelerisque felis imperdiet proin. Id faucibus nisl tincidunt eget nullam non nisi est sit. Vitae turpis massa sed elementum tempus egestas. Mauris vitae ultricies leo integer malesuada nunc vel.</p>
+		<p>The medical world was plagued by misinformation and so much doubt. It was a very dark era, all the mighty students suffered and there were screams for help. When we heard the screams 'Mednation' was made. We specialise in destroying misinformation and doubt</p>
 	</div>
 </section>
 

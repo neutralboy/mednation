@@ -31,8 +31,15 @@
         <div class="header has-text-centered margin-bottom">
             <h1 class="is-size-2 font-brand">Medical Blog</h1>
         </div>
+            {#if cards.length == 0}
+                <div class="content has-text-centered">
+                    <p>You're here too early. Help us write an article. <a href="/get-involved">Click here</a></p>
+                </div>
+            {/if}
         <div class="columns is-multiline">
-            
+
+
+
                 {#each cards as { title, summary, _created, author, _id, type, image }}
                     <div class="column is-half-desktop is-full-mobile">
                         <a href={"/blog/"+_id}>

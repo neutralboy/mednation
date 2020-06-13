@@ -6,6 +6,7 @@ async function getAllPosts() {
     let res = await fetch(domain + "/api/collections/get/reviews?token=" + key, {
         method: 'post',
         body: JSON.stringify({
+            filter: {published:true},
             limit: 10,
             fields: { title: 1, _id: 1, rating: 1, main_body: 1, state: 1, main_image: 1, location: 1 }
         })
