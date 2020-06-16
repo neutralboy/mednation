@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <sitemap>
-      <loc>https://www.mednation.org/review/sitemap.xml</loc>
-    </sitemap>
-    <sitemap>
-      <loc>https://www.mednation.org/blog/sitemap.xml</loc>
-    </sitemap>
-  </sitemapindex>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://www.mednation.org/</loc>
+  <lastmod>2020-06-16T07:40:22+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.mednation.org/review/</loc>
+  <lastmod>2020-06-16T07:40:22+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.mednation.org/mentors/</loc>
+  <lastmod>2020-06-16T07:40:22+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.mednation.org/blog/</loc>
+  <lastmod>2020-06-16T07:40:22+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.mednation.org/get-involved/</loc>
+  <lastmod>2020-06-16T07:40:22+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.mednation.org/review/5ed7293077bc4e25ee2f70c4/</loc>
+  <lastmod>2020-06-16T07:40:22+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.mednation.org/about-us/</loc>
+  <lastmod>2020-06-16T07:40:22+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
