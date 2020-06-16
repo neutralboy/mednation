@@ -4,6 +4,7 @@
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width,initial-scale=1.0'>
 	<meta name='theme-color' content='#333333'>
+
 	%sapper.base%
 
 	<link rel='manifest' href='manifest.json' crossorigin='use-credentials'>
@@ -11,23 +12,25 @@
 	<link rel="icon" sizes="192x192" href="https://res.cloudinary.com/poorna/image/upload/c_scale,h_192,q_auto:eco,w_192/v1591465644/mednation-favicon-192.png">
 	<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Noto+Serif&family=Poppins&display=swap"
 		rel="stylesheet">
-	<!-- Sapper generates a <style> tag containing critical CSS
-	     for the current page. CSS for the rest of the app is
-	     lazily loaded when it precaches secondary pages -->
+
 	%sapper.styles%
 
-	<!-- This contains the contents of the <svelte:head> component, if
-	     the current page has one -->
 	%sapper.head%
+
 </head>
 <body>
-	<!-- The application will be rendered inside this element,
-	     because `src/client.js` references it -->
 	<div id='sapper'>%sapper.html%</div>
 
-	<!-- Sapper creates a <script> tag containing `src/client.js`
-	     and anything else it needs to hydrate the app and
-	     initialise the router -->
 	%sapper.scripts%
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121255747-7"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-121255747-7');
+	</script>
+
 </body>
 </html>
