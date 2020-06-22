@@ -62,11 +62,11 @@
 	}
 }
 </style>
-<Og url={"review/"+slug} title={post.title} image={post.main_image.path} description={post.main_body.substring(0, 80) + "..."} />
+<Og url={"review/"+slug} title={post.title.iv} image={post.image.iv[0]} description={post.summary.iv.substring(0, 80) + "..."} />
 <section class="section">
 	<div class="container">
 		<div class="header has-text-centered">
-			<h1 class="is-size-2 is-family-secondary has-text-black">{post.title}</h1>
+			<h1 class="is-size-2 is-family-secondary has-text-black">{post.title.iv}</h1>
 		</div>
 		<div class="columns is-mobile">
 			<div class="column is-6 has-text-centered">
@@ -74,7 +74,7 @@
 					<span class="icon">
 						<img alt="state" src="https://img.icons8.com/plasticine/100/000000/india.png"/>
 					</span>
-					<span>{post.state}</span>
+					<span>{post.state.iv}</span>
 				</button>
 			</div>
 			<div class="column is-6 has-text-centered">
@@ -82,18 +82,18 @@
 					<span class="icon">
 						<img alt="location" src="https://img.icons8.com/cotton/64/000000/worldwide-location--v2.png"/>
 					</span>
-					<span>{post.location.lat.toFixed(2) +", "+post.location.lng.toFixed(2)}</span>
+					<span>{post.location.iv.latitude.toFixed(2) +", "+post.location.iv.longitude.toFixed(2)}</span>
 				</a>
 			</div>
 	</div>
 </section>
 <div class="image has-text-centered">
-	<img alt={post.title} src={"https://backend.mednation.org"+processImage(post.main_image.path)} >
+	<img alt={post.title.iv} src={"https://cloud.squidex.io/api/assets/mednation-review/"+post.image.iv[0]} >
 </div>
 <section class="section">
 	<div class="container">
 		<div class="content">
-			<p>{post.main_body}</p>
+			<p>{post.summary.iv}</p>
 		</div>
 
 		<div id="campus" class="heading">
@@ -104,14 +104,14 @@
 				Campus
 			</h3>
 			<div class="content">
-				<p>{post.campus_summary}</p>
+				<p>{post.campusSummary.iv}</p>
 			</div>
 			<div class="columns">
 				<div class="column is-half-desktop is-full-desktop">
-					<Accordion title="College" content={post.college_specifics} />
+					<Accordion title="College" content={post.collegeSpecifics.iv} />
 				</div>
 				<div class="column is-half-desktop is-full-desktop">
-					<Accordion title="Hospital" content={post.hospital_specifics} />
+					<Accordion title="Hospital" content={post.hospitalSpecifics.iv} />
 				</div>
 			</div>
 		</div>
@@ -124,14 +124,14 @@
 				Hostel
 			</h3>
 			<div class="content">
-				<p>{post.hostel_summary}</p>
+				<p>{post.hostelSummary.iv}</p>
 			</div>
 			<div class="columns">
 				<div class="column is-half-desktop is-full-mobile">
-					<Accordion title="Mens Hostel" content={post.mens_hostel} />
+					<Accordion title="Mens Hostel" content={post.mensHostel.iv} />
 				</div>
 				<div class="column is-half-desktop is-full-mobile">
-					<Accordion title="Ladies Hostel" content={post.ladies_hostel} />
+					<Accordion title="Ladies Hostel" content={post.ladiesHostel.iv} />
 				</div>
 			</div>
 		</div>
@@ -143,8 +143,8 @@
 				</span>
 				Safety
 			</h3>
-			<div class="content"><p> {post.safety_summary} </p></div>
-			<Accordion title="Read More" content={post.safety_specifics} />
+			<div class="content"><p> {post.safetySummary.iv} </p></div>
+			<Accordion title="Read More" content={post.safetySpecifics.iv} />
 		</div>
 
 		<div id="transport" class="heading">
@@ -154,8 +154,8 @@
 				</span>
 				Transport
 			</h3>
-			<div class="content"><p> {post.transport_summary} </p></div>
-			<Accordion title="Read More" content={post.transport_specifics} />
+			<div class="content"><p> {post.transportSummary.iv} </p></div>
+			<Accordion title="Read More" content={post.transportSpecifics.iv} />
 		</div>
 
 		<div id="comp" class="heading">
@@ -165,16 +165,16 @@
 				</span>
 				Competitions
 			</h3>
-			<div class="content"><p> {post.competitions_summary} </p></div>
+			<div class="content"><p> {post.competitionsSummary.iv} </p></div>
 			<div class="columns">
 				<div class="column is-one-third-desktop is-full-mobile">
-					<Accordion title="Fests" content={post.fests} />
+					<Accordion title="Fests" content={post.fests.iv} />
 				</div>
 				<div class="column is-one-third-desktop is-full-mobile">
-					<Accordion title="Culturals" content={post.culturals} />
+					<Accordion title="Culturals" content={post.culturals.iv} />
 				</div>
 				<div class="column is-one-third-desktop is-full-mobile">
-					<Accordion title="Sports" content={post.sports} />
+					<Accordion title="Sports" content={post.sports.iv} />
 				</div>
 			</div>
 		</div>
@@ -186,8 +186,8 @@
 				</span>
 				Lifestyle
 			</h3>
-			<div class="content"><p> {post.lifestyle_summary} </p></div>
-			<Accordion title="Read More" content={post.lifestyle_specifics} />
+			<div class="content"><p> {post.lifestyleSummary.iv} </p></div>
+			<Accordion title="Read More" content={post.lifestyleSpecifics.iv} />
 		</div>
 
 

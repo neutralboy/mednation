@@ -26,15 +26,15 @@
         </div>
         <div class="columns is-multiline">
             
-                {#each cards as { title, rating, state, main_image, main_body, _id }}
+                {#each cards as { title, rating, state, image, summary, slug }}
                     <div class="column is-one-third-desktop is-full-mobile">
                         <Card
                             title={title}
                             rating={rating}
                             state={state}
-                            image={main_image}
-                            main_body={main_body}
-                            link={_id}
+                            image={image}
+                            main_body={summary}
+                            link={slug}
                         />
                     </div>
                 {/each}

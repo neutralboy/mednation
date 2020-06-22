@@ -54,9 +54,9 @@
 
 			<div class="columns">
 
-			{#each latest as { _id, title, state }}
+			{#each latest as { slug, title, state }}
 				<div class="column is-one-quarter-desktop is-full-mobile" >
-					<a href={"/review/"+_id}>
+					<a href={"/review/"+slug}>
 						<div class="box content">
 							<h4 class="is-family-secondary">{title}</h4>
 							<button class="button is-info is-light is-medium" >{state}</button>

@@ -1,17 +1,28 @@
 const fetch = require("node-fetch")
 
+
+async function getToken(){
+    let res = await fetch("https://cloud.squidex.io/identity-server/connect/token",{
+        method: "post",
+        headers:{
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: "grant_type=client_credentials&client_id=mednation-review:ssg-reader&client_secret=a6akmje51jkhc4j5vsply6zppmxu4zwh9wcspcyjat4x&scope=squidex-api"
+    }).then(r=>r.json()).catch(e=>{ console.log(e) })
+    const token = res.access_token;
+    return token;
+}
+
 async function getAllPosts() {
-    const key = "account-b822f49ae6fb5c314ad1d5d7cfdf38"
-    const domain = "https://backend.mednation.org";
-    let res = await fetch(domain + "/api/collections/get/reviews?token=" + key, {
-        method: 'post',
-        body: JSON.stringify({
-            filter: {published:true},
-            limit: 10,
-            fields: { title: 1, _id: 1, rating: 1, main_body: 1, state: 1, main_image: 1, location: 1 }
-        })
-    }).then(r => r.json()).catch(e=>{ console.log(e) })
-    const posts = res.entries;
+    let token = await getToken();
+    console.log("TOKEN: "+token);
+    let res = await fetch("https://cloud.squidex.io/api/content/mednation-review/review/",{
+        headers:{
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    }).then(r =>r.json()).catch(e=>{ console.log(e) })
+    const posts = res.items;
     return posts || [];
 }
 
@@ -24,12 +35,13 @@ export async function get(req, res) {
     const posts = await getAllPosts();
     const contents = JSON.stringify(posts.map(post => {
         return {
-            title: post.title,
-            main_body: post.main_body,
-            rating: post.rating,
-            state: post.state,
-            _id: post._id,
-            main_image: post.main_image
+            id: post.id,
+            title: post.data.title.iv,
+            summary: post.data.summary.iv,
+            rating: post.data.rating.iv,
+            state: post.data.state.iv,
+            slug: post.data.slug.iv,
+            image: "https://cloud.squidex.io/api/assets/mednation-review/"+post.data.image.iv[0]
         };
     }));
     res.end(contents);

@@ -1,22 +1,30 @@
 const fetch = require('node-fetch');
 
+async function getToken(){
+    let res = await fetch("https://cloud.squidex.io/identity-server/connect/token",{
+        method: "post",
+        headers:{
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: "grant_type=client_credentials&client_id=mednation-review:ssg-reader&client_secret=a6akmje51jkhc4j5vsply6zppmxu4zwh9wcspcyjat4x&scope=squidex-api"
+    }).then(r=>r.json()).catch(e=>{ console.log(e) })
+    const token = res.access_token;
+    return token;
+}
+
 const getPosts = async () => {
-	const key = "account-b822f49ae6fb5c314ad1d5d7cfdf38"
-	const domain = "https://backend.mednation.org";
-	let res = await fetch(domain + "/api/collections/get/reviews?token=" + key, {
-		method: 'post',
-		body: JSON.stringify({
-			filter: {published:true},
-			limit: 10
-		})
+	let token = await getToken();
+	let res = await fetch("https://cloud.squidex.io/api/content/mednation-review/review/", {
+		method: 'get',
+		headers:{
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
 	}).then(r=>r.json())
-	const posts = res.entries;
-	posts.forEach(post => {
-		post.college_specifics = post.college_specifics.replace(/^\t{3}/gm, '');
-	});
+	const posts = res.items;
 	let lookup = new Map();
 	posts.forEach(post => {
-		lookup.set(post._id, JSON.stringify(post));
+		lookup.set(post.data.slug.iv, JSON.stringify(post.data));
 	});
 	return lookup;
 }

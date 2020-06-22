@@ -37,7 +37,7 @@
     <div class="card">
         <div class="card-image">
             <figure class="image is-2by1">
-            <img src={"https://backend.mednation.org"+processImage(image.path)} alt={title}>
+            <img src={image} alt={title}>
             </figure>
         </div>
         <div class="card-content">
@@ -56,7 +56,7 @@
             <div class="level is-mobile">
                 <div class="level-left">
                     <div class=" level-item rating has-text-centered">
-                        <span class="value">{rating*2}</span>
+                        <span class="value">{rating}</span>
                         <span class="total"> Out of 10</span>
                     </div>
                 </div>
