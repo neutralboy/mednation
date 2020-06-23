@@ -6,6 +6,8 @@ A med student community for reviews written by students.
 * Cockpit CMS
 
 ## Features to Add
+* Fix all forms
+* Blogs and Mentors page
 * Generate sitemap
 
 ## Level 2 

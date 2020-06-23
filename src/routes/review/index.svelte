@@ -22,7 +22,7 @@
 <section class="section">
     <div class="container">
         <div class="header has-text-centered margin-bottom">
-            <h1 class="is-size-2 font-brand">College Reviews</h1>
+            <h1 class="is-size-2 is-family-secondary">College Reviews</h1>
         </div>
         <div class="columns is-multiline">
             

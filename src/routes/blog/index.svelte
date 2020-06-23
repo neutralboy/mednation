@@ -29,7 +29,7 @@
 <section class="section">
     <div class="container">
         <div class="header has-text-centered margin-bottom">
-            <h1 class="is-size-2 font-brand">Medical Blog</h1>
+            <h1 class="is-size-2 is-family-secondary">Medical Blog</h1>
         </div>
             {#if cards.length == 0}
                 <div class="content has-text-centered">
@@ -40,23 +40,20 @@
 
 
 
-                {#each cards as { title, summary, _created, author, _id, type, image }}
+                {#each cards as { title, summary, author, slug, tags }}
                     <div class="column is-half-desktop is-full-mobile">
-                        <a href={"/blog/"+_id}>
+                        <a href={"/blog/"+slug}>
                             <div class="box">
-                                <div class="columns is-vcentered">
-                                    <div class="column is-one-third-desktop is-full-mobile">
-                                        <img src={"https://backend.mednation.org"+processImage(image.path)} alt={title}>
-                                    </div>
-                                    <div class="column is-two-thirds-desktop is-full-mobile">
-                                        <h2 class="is-size-2 has-text-black is-family-secondary" >{title}</h2>
-                                    </div>
+                                <div>
+                                    <h2 class="is-size-2 has-text-black is-family-secondary" >{title}</h2>
                                 </div>
                                 <p>{summary.substring(0, 80) + "..."}</p>
                                 <br>
                                 <div class="columns is-vcentered is-mobile">
                                     <div class="column is-6">
-                                        <button class="button is-primary is-light is-medium">{type}</button>
+                                        {#each tags as tag}
+                                            <button class="button is-primary is-light">{tag}</button>
+                                        {/each}
                                     </div>
                                     <div class="column is-6">
                                         <p class="is-family-secondary">By {author}</p>

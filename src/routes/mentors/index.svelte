@@ -1,29 +1,22 @@
 <script context="module" >
-    const key = "account-b822f49ae6fb5c314ad1d5d7cfdf38"
-    const domain = "https://backend.mednation.org";
-	export async function preload() {
-		const res = await this.fetch(domain+"/api/collections/get/usmle?token="+key);
-        const r = await res.json();
-		return { users: r.entries };
-	}
+  export function preload({ params, query }) {
+    return this.fetch(`mentors.json`).then(r => r.json()).then(cards => {
+      return { cards: cards };
+    });
+  }
 </script>
 <script>
-    import MentorSignUp from '../components/mentor-signup.svelte';
-    import Og from '../components/og.svelte';
+    import MentorSignUp from '../../components/mentor-signup.svelte';
+    import Og from '../../components/og.svelte';
     export let users;
+    export let cards;
     let open = false;
-    function processImage(img){
-        if(img[0] != "/"){
-            return "/"+img;
-        }
-        return img;
-    }
     function toggle(){
         open = !open;
     }
 </script>
 <style lang="scss">
-	@import "../main.scss";
+	@import "../../main.scss";
 	@import "bulma/sass/grid/columns.sass";
 	@import "bulma/sass/components/card.sass";
     @import "bulma/sass/elements/image.sass";
@@ -44,12 +37,12 @@
 
         <div class="columns is-multiline">
 
-{#each users as { name, image, description, type }}
+{#each cards as { name, image, description, type }}
             <div class="column is-one-third-desktop is-full-mobile">
                 <div class="card">
                     <div class="card-image">
                         <figure class="image is-4by3">
-                        <img src={"https://backend.mednation.org"+processImage(image.path)} alt="Placeholder image">
+                        <img src={image} alt={name}>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -61,7 +54,7 @@
                         <div class="content">
                             {description}
                         </div>
-                        <button class:is-primary="{type=='USMLE'}" class:is-success="{type=='PLAB'}" class:is-info="{type=='NEET'}" class="button is-rounded is-medium">{type}</button>
+                        <button class:is-primary="{type=='USMLE'}" class:is-success="{type=='PLAB'}" class:is-info="{type=='NEET-PG'}" class="button is-rounded is-medium">{type}</button>
                     </div>
                 </div>
             </div>

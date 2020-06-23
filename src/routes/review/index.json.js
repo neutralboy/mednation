@@ -15,7 +15,6 @@ async function getToken(){
 
 async function getAllPosts() {
     let token = await getToken();
-    console.log("TOKEN: "+token);
     let res = await fetch("https://cloud.squidex.io/api/content/mednation-review/review/",{
         headers:{
             'Content-Type': 'application/json',

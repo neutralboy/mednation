@@ -39,32 +39,31 @@
 		margin-bottom: 2rem;
 	}
 </style>
-<Og url={"blog/"+slug} title={post.title} description={post.summary.substring(0, 80) + "..."} />
+<Og url={"blog/"+slug} title={post.title.iv} description={post.summary.iv.substring(0, 80) + "..."} />
 <section class="section">
     <div class="container is-fluid">
 
 		<div class="header has-text-centered">
-			<h1 class="is-size-2 is-family-secondary has-text-black">{post.title}</h1>
+			<h1 class="is-size-2 is-family-secondary has-text-black">{post.title.iv}</h1>
 		</div>
 		<div class="columns is-mobile">
 			<div class="column is-6 has-text-centered">
-				<h3 class="is-size-5 is-family-secondary">{post.author}</h3>
+				<h3 class="is-size-5 is-family-secondary">By {post.author.iv}</h3>
 			</div>
 			<div class="column is-6 has-text-centered">
-				<button class="button is-medium is-light is-info">
-					<span>{post.type}</span>
-				</button>
+				{#each post.tags.iv as tag}
+					<button class="button is-medium is-light is-info">
+						<span>{tag}</span>
+					</button>
+				{/each}
 			</div>
 
     </div>
 </section>
-<div class="image has-text-centered">
-	<img alt={post.title} src={"https://backend.mednation.org"+processImage(post.image.path)} >
-</div>
 <section class="section">
 	<div class="container">
 		<div class="content">
-			{@html post.body}
+			{@html post.content.iv}
 		</div>
 	</div>
 </section>

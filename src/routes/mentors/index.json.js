@@ -1,5 +1,6 @@
 const fetch = require("node-fetch")
 
+
 async function getToken(){
     let res = await fetch("https://cloud.squidex.io/identity-server/connect/token",{
         method: "post",
@@ -12,34 +13,32 @@ async function getToken(){
     return token;
 }
 
-async function getAllBlogs() {
+async function getAllPosts() {
     let token = await getToken();
-    let res = await fetch("https://cloud.squidex.io/api/content/mednation-review/blog/",{
+    let res = await fetch("https://cloud.squidex.io/api/content/mednation-review/mentors/",{
         headers:{
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
         }
     }).then(r =>r.json()).catch(e=>{ console.log(e) })
-    const blogs = res.items;
-    return blogs || [];
+    const posts = res.items;
+    return posts || [];
 }
+
 
 
 export async function get(req, res) {
     res.writeHead(200, {
         'Content-Type': 'application/json'
     });
-    const posts = await getAllBlogs();
+    const posts = await getAllPosts();
     const contents = JSON.stringify(posts.map(post => {
         return {
             id: post.id,
-            title: post.data.title.iv,
-            content: post.data.content.iv,
-            author: post.data.author.iv,
-            slug: post.data.slug.iv,
-            tags: post.data.tags.iv,
-            summary: post.data.summary.iv,
-            created: post.created
+            name: post.data.name.iv,
+            description: post.data.description.iv,
+            image: "https://cloud.squidex.io/api/assets/mednation-review/"+post.data.image.iv[0],
+            type: post.data.type.iv
         };
     }));
     res.end(contents);
